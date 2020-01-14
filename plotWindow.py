@@ -1,3 +1,9 @@
+import matplotlib
+# prevent NoneType error for versions of matplotlib 3.1.0rc1+ by calling matplotlib.use()
+# For more on why it's nececessary, see
+# https://stackoverflow.com/questions/59656632/using-qt5agg-backend-with-matplotlib-3-1-2-get-backend-changes-behavior
+matplotlib.use('qt5agg')
+
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt

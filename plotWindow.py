@@ -16,9 +16,10 @@ import sys
 
 class plotWindow():
     def __init__(self, parent=None):
-        self.app = QApplication(sys.argv)
+        self.app = QApplication.instance()
+        if not self.app:
+            self.app = QApplication(sys.argv)
         self.MainWindow = QMainWindow()
-        self.MainWindow.__init__()
         self.MainWindow.setWindowTitle("plot window")
         self.canvases = []
         self.figure_handles = []
